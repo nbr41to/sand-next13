@@ -1,21 +1,36 @@
 import Link from 'next/link';
-import { ReactNode } from 'react';
+import { FC, ReactNode } from 'react';
+import '../styles/globals.css';
 
-type Props = {
+type Prop = {
   children: ReactNode;
 };
 
-export default function Layout({ children }: Props) {
+const Layout: FC<Prop> = ({ children }) => {
   return (
-    <html>
-      <header>Home Layout</header>
-      <nav>
-        <Link href='/'>Home</Link>
-        <Link href='/about'>About</Link>
-        <Link href='/news'>News</Link>
-        <Link href='/news/123'>News/123</Link>
-      </nav>
-      <body>{children}</body>
-    </html>
+    <>
+      <header className='bg-gray-600 text-white text-center'>
+        <h1>I am header.</h1>
+        <nav className='space-x-2'>
+          <Link href='/' className='underline'>
+            Home
+          </Link>
+          <Link href='/about' className='underline'>
+            About
+          </Link>
+          <Link href='/news' className='underline'>
+            News
+          </Link>
+        </nav>
+      </header>
+
+      <main>{children}</main>
+
+      <footer className='bg-gray-600 text-white text-center'>
+        I am footer
+      </footer>
+    </>
   );
-}
+};
+
+export default Layout;

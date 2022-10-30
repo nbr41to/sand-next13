@@ -1,21 +1,25 @@
-import Link from 'next/link';
 import { ReactNode } from 'react';
+import '../../styles/globals.css';
 
-type Props = {
+type Prop = {
   children: ReactNode;
 };
 
-export default function Layout({ children }: Props) {
+const AboutLayout = ({ children }: Prop) => {
   return (
-    <html>
-      <header>About Layout..</header>
-      <nav>
-        <Link href='/'>Home</Link>
-        <Link href='/about'>About</Link>
-        <Link href='/news'>News</Link>
-        <Link href='/news/123'>News/123</Link>
-      </nav>
-      <body>{children}</body>
-    </html>
+    <>
+      <header className='bg-gray-600 text-white text-center'>
+        <h1>I am header.</h1>
+        <div className='bg-red-400 text-white'>About</div>
+      </header>
+
+      <main>{children}</main>
+
+      <footer className='bg-gray-600 text-white text-center'>
+        I am footer
+      </footer>
+    </>
   );
-}
+};
+
+export default AboutLayout;
