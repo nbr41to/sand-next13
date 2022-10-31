@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 const AboutComponent: FC = () => {
   return (
-    <div className='border rounded p-4'>
+    <div className='rounded border p-4'>
       <p>About の内容だよ</p>
       <p>About の内容だよ</p>
       <p>About の内容だよ</p>
